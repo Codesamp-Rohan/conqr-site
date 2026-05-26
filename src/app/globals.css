@@ -3,6 +3,17 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  --primary: #0d4b73;
+  --secondary: #efc08f;
+
+  --white: #ffffff;
+  --black: #000000;
+
+  --border: #e6e6e6;
+
+  --font-manrope: 'Manrope', sans-serif;
+  --font-instrument-serif: 'Instrument Serif', serif;
 }
 
 @theme inline {
@@ -22,5 +33,98 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-manrope);
+}
+
+.is-font {
+  font-family: var(--font-instrument-serif);
+}
+
+
+/* BASE BACKGROUND */
+
+.aurora-base {
+  background:
+    radial-gradient(circle at top left, #efc08f 0%, transparent 40%),
+    radial-gradient(circle at top right, #f4dca9 0%, transparent 35%),
+    radial-gradient(circle at center, #f7f1ea 0%, #efe6dc 100%);
+}
+
+/* NOISE */
+
+.noise-texture {
+  background-image:
+    radial-gradient(rgba(0, 0, 0, 0.8) 0.5px, transparent 0.5px);
+
+  background-size: 4px 4px;
+}
+
+/* BLOB ANIMATIONS */
+
+@keyframes blob1 {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+
+  50% {
+    transform: translate(40px, 30px) scale(1.08);
+  }
+
+  100% {
+    transform: translate(-20px, 10px) scale(0.95);
+  }
+}
+
+@keyframes blob2 {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+
+  50% {
+    transform: translate(-30px, 20px) scale(1.1);
+  }
+
+  100% {
+    transform: translate(20px, -20px) scale(0.96);
+  }
+}
+
+@keyframes blob3 {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+
+  50% {
+    transform: translate(20px, -30px) scale(1.06);
+  }
+
+  100% {
+    transform: translate(-40px, 20px) scale(1);
+  }
+}
+
+.animate-blob1 {
+  animation: blob1 14s infinite ease-in-out alternate;
+}
+
+.animate-blob2 {
+  animation: blob2 18s infinite ease-in-out alternate;
+}
+
+.animate-blob3 {
+  animation: blob3 20s infinite ease-in-out alternate;
+}
+
+.primary-button {
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 8px 16px;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.primary-button:hover {
+  background-color: var(--secondary);
+  color: var(--primary);
 }
