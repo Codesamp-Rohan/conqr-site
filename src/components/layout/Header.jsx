@@ -15,22 +15,6 @@ export default function Header() {
         >
           <Image src={logo} alt="Logo" className="h-10 w-fit" />
         </Link>
-
-        <nav className="flex items-center gap-6">
-          <Link
-            href="/"
-            className="text-sm text-gray-600 hover:text-black transition"
-          >
-            Home
-          </Link>
-
-          <Link
-            href="/workspace"
-            className="text-sm text-gray-600 hover:text-black transition"
-          >
-            <PrimaryButton children="Workspace" />
-          </Link>
-        </nav>
       </div>
     </header>
   );
